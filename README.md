@@ -1,4 +1,4 @@
-# p2p-email
+# P2P-email
 
 CIS 433 
 Haomin He, Yanting Liu, Zhibin Zhang
