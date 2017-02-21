@@ -1,5 +1,6 @@
 import socket
 import sys
+from socket import gethostbyname
 
 PORT = 5000
 next = 1024
