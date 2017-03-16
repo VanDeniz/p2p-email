@@ -73,7 +73,7 @@ if __name__ == "__main__":
 	#read email from this email address
 	fromadd = "hahaha@123.com"
 	#email content
-	content = "Hello, I want to let you know you are beautiful :) Ohhhhhhhhhhhhhh My Goshhhhhhhhhh, you are sooooo pretty!!!"
+	content = "Hello, hope you have a nice day!"
 	app = readmail_tk(None)
 	app.title('P2P Email-Reading')
 	app.mainloop() 
