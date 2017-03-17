@@ -25,13 +25,18 @@ We are building an email system of confidentiality, integrity, and authenticatio
 
 Implementation Usage: 
 	>python useragent.py 5000 127.0.0.1 4000
+
 	>Enter send or receive
+
 	receive
+
 	>Enter your email:
+
 	123@123.com
 	
 Interface Usage:  
 	>python p2pemailUI_readmail.py 
+
 	>python p2pemailUI_sendmail.py 
 
 ![alt tag](https://github.com/VanDeniz/p2p-email/blob/master/uesImages/1.GIF)
