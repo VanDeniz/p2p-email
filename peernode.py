@@ -47,19 +47,20 @@ def genericErrorCallback(failure):
     #twisted.internet.reactor.callLater(0,stop)
 
 
-def fetch(node,identifier):
+def fetch(node,identifier,eaddress):
     """
     retrieve stored objects(encrypted message body)
     """
     deferredResult = node.iterativeFindValue(identifier)
-    deferredResult.addCallback(fetchCallback,identifier)
+    deferredResult.addCallback(fetchCallback,identifier,eaddress,node)
     deferredResult.addErrback(genericErrorCallback)
 
-def fetchCallback(result,identifier):
+def fetchCallback(result,identifier,eaddress,node):
     if type(result) == dict:
         print 'Value successfully retrieved'
         #print the email on the screem
         print(result[identifier])
+        delete(node,identifier,eaddress)
         #return ???
     else:
         print'Value not found'
@@ -72,10 +73,10 @@ def delete(node,identifier, eaddress):
     """
     #certificate?
     deferredResult = node.iterativeDelete(identifier)
-    deferredResutl.addCallback(deleteCallback)
+    deferredResult.addCallback(deleteCallback)
     deferredResult.addErrback(genericErrorCallback)
 
-def deleteValueCallback(result):
+def deleteCallback(result):
     print'Key/value pair deleted'
 
 def append_Inbox(node,eaddress,header):
@@ -104,7 +105,10 @@ def readInboxCallback(result,eaddress,node):
     # Check if the key was found (result is a dict of format {key: value}) or not (in which case a list of "closest" Kademlia contacts would be returned instead")
     if type(result) == dict:
         #can
-        fetch(node,result[eaddress])
+        fetch(node,result[eaddress],eaddress)
+        #after fetch the message body delete the notification
+        delete(node,eaddress,eaddress)
+
         #print 'Value successfully retrieved'
     else:
         print 'Value not found'
