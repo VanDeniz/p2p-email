@@ -21,6 +21,9 @@ Objectives:
 -- Build a mini-database 
 
 We are building an email system of confidentiality, integrity, and authentication. The current program we are working on involves three main functions: a distributed hash table to keep track of messages of users, a method to send encrypted and signed email, and a method to verify and decrypt received email.
+
+Dependency: Twisted core 16.0.0
+(The newest version does not work)
  
 
 Implementation Usage: 
