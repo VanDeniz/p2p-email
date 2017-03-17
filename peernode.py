@@ -6,10 +6,8 @@ import kademlia.node
 #from kademlia.node import 
 
 from entangled.node import EntangledNode
-"""
-class Emailheader:
-    """Email header
-    """
+"""class Emailheader:
+    Email header
     def __init__(self,session_key,msgid,digest):
         self.session_key = session_key
         self.msgid = msgid

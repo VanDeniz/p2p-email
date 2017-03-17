@@ -2,7 +2,7 @@ from peernode import store
 from peernode import append_Inbox
 from peernode import fetch
 from peernode import read_Inbox
-from peernode import Emailheader
+#from peernode import Emailheader
 from email.utils import make_msgid
 import hashlib
 import os, sys, time, signal
@@ -68,7 +68,7 @@ def main():
     
     #generate email header
     hash_sha1 = hashlib.sha1(msg)
-    header = Emailheader(session_key,msgid,hash_sha1.digest())
+    #header = Emailheader(session_key,msgid,hash_sha1.digest())
     
     #stroe the email address and email head in the DHT
     append_Inbox(node,rcv_id, msgid[0:12])
